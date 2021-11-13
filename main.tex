@@ -1,4 +1,4 @@
-
+    
 \AtBeginDocument{\hypersetup{pdfborder = 0 1 1, linkcolor=blue}}
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvtheme[blue]{classic}
@@ -7,17 +7,23 @@
 \usepackage[top=1.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
 \setlength{\hintscolumnwidth}{2.5cm}
 
+\RequirePackage{filecontents}
+\usepackage[backend=biber,maxbibnames=99,defernumbers=true,sorting=ydnt,giveninits=true]{biblatex}
+
 \firstname{Lucas}
 \familyname{Gautheron}
 %\title{Etudiant en Physique}              
-\address{3 Rue Bellier-Dedouvre}{75013 Paris}    
+\address{26bis Rue Damesme}{75013 Paris}    
 \email{lucas.gautheron@gmail.com}                      
 \homepage{sciencestechniques.fr}
 \mobile{06 79 23 86 47} 
 \extrainfo{29/01/1995}
+%\photo[70pt][0.5pt]{photo.png}
 
-\RequirePackage{filecontents}
+
+
 \begin{filecontents*}{\jobname.bib}
+
 @inproceedings{gautheron:hal-03047153,
   TITLE = {{Longform recordings : Opportunities and challenges}},
   AUTHOR = {Gautheron, Lucas and Lavechin, Marvin and Riad, Rachid and Scaff, Camila and Cristia, Alejandrina},
@@ -33,34 +39,89 @@
   HAL_ID = {hal-03047153},
   HAL_VERSION = {v1},
 }
+
+@article{Lavechin2021,
+  doi = {10.31234/osf.io/pt9xq},
+  url = {https://doi.org/10.31234/osf.io/pt9xq},
+  note = {\url{https://doi.org/10.31234/osf.io/pt9xq}},
+  year = {2021},
+  month = mar,
+  publisher = {Center for Open Science},
+  author = {Marvin Lavechin and Maureen de Seyssel and Lucas Gautheron and Emmanuel Dupoux and Alejandrina Cristia},
+  title = {Reverse-engineering language acquisition with child-centered long-form recordings},
+  journal = {Annual Reviews of Linguistics}
+}
+
+@article{gautheron_rochat_cristia_2021,
+ title={Managing, storing, and sharing long-form recordings and their annotations},
+ url={https://psyarxiv.com/w8trm},
+ note = {\url{https://psyarxiv.com/w8trm}},
+ DOI={10.31234/osf.io/w8trm},
+ publisher={PsyArXiv},
+ author={Gautheron, Lucas and Rochat, Nicolas and Cristia, Alejandrina},
+ year={2021},
+ month={May},
+ journal={Submitted to \emph{Language Resources and Evaluation}}
+}
 \end{filecontents*}
 
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}    
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\addbibresource{\jobname.bib}
+\boldname{Gautheron}{Lucas}{L.}
 
 \begin{document}
 \maketitle
 
 \section{Formation}
-\cventry{2014-2018}{M1}{Ecole Normale Supérieure de Cachan}{Cachan (94)}{}{Fonctionnaire stagiaire. Physique expérimentale et théorique, mathématiques. Options Symétries et intégrales de chemin, Astrophysique et astroparticules.}
+\cventry{2021-2022}{M2}{Université de Paris}{Paris (75)}{Histoire et Philosophie des Sciences [\textit{En cours}]}{}
+\cventry{2014-2018}{L3/M1}{Ecole Normale Supérieure de Cachan}{Cachan (94)}{Physique Théorique et Expérimentale (Phytem)}{Fonctionnaire stagiaire. Options Symétries et intégrales de chemin, Astrophysique et astroparticules.}
 \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy (74)}{}{Classe préparatoire aux grandes écoles}
 \cventry{2009 -- 2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
 
 \section{Recherche}
 
-\cventry{Septembre 2020 -- Mars 2021}{Ingénieur}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
-Étude de l'acquisition du langage à travers les cultures à l'aide d'enregistrements de longue durée. Supervisé par 
-Alejandrina Cristia.
+\cventry{Septembre 2020 à Novembre 2021}{Ingénieur d'études}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
+Étude de l'acquisition du langage à travers les cultures à l'aide d'enregistrements audio de longue durée.
 \begin{itemize}%
-\item Développement de process et d'un package python pour la gestion et le stockage de datasets volumineux ($\mathcal{O}(10^4)$ heures d'enregistrements audio + bases de données et annotations)
-\item Tâches de classification (RNN)
-\item Extraction de statistiques sur les données (python, R)
+\item Développement de procédures et d'un package python pour la gestion, le stockage et l'analyse de datasets volumineux ($\mathcal{O}(10^4)$ heures d'enregistrements audio + bases de données et annotations)
+\item Traitement du signal sur les enregistrements longs
+\item Analyse de données
+\item Formation CNRS "Fondamentaux du Machine Learning et du Deep Learning" (28h); apprentissage supervisé et non supervisé, réseaux de neurones; (scikit-learn, keras/tensorflow, pytorch)
 \end{itemize}
 }
 
 \cventry{Octobre 2016 -- Janvier 2017}{Stage de recherche}{Laboratoire Univers et Théories (LUTH - INSU - CNRS)}{}{Paris Meudon}{
 Influence de la distribution complète de noyaux pendant une supernova à effondrement de coeur sur les taux de capture électronique et la diffusion de neutrinos. Supervisé par Micaela Oertel.
 \begin{itemize}%
-\item Nouveau code pour générer les taux de capture électronique et les sections efficaces de diffusion de neutrinos durant une supernova (C++)
-\item Integration de ces résultats dans une simulation du processus de supernova (CoCoNuT, Fortran).
+\item Calcul de taux de capture électronique et les sections efficaces de diffusion de neutrinos durant une supernova
+\item Integration de ces résultats dans une simulation du processus de supernova (Fortran, C++).
 \end{itemize}
 }
 
@@ -75,12 +136,12 @@ Analyse diphoton et phénoménologie pour l'expérience ATLAS. Supervisé par Ly
 \cventry{Octobre 2015 -- Janvier 2016}{Stage de recherche}{Laboratoire d'Annecy-Le-Vieux de Physique Théorique (LAPth - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
 Cosmologie. Supervisé par Richard Taillet.
 \begin{itemize}%
-\item Création d'une site Internet pédagogique sur l'histoire de la cosmologie moderne, sur la base d'un important travail bibliographique (\href{http://cosmology.education/}{http://cosmology.education/})
+\item Création d'une site Internet pédagogique sur l'histoire de la cosmologie moderne (\href{http://cosmology.education/}{http://cosmology.education/})
 \item Développement de plusieurs simulations (en C++) pour l'animation du site
 \end{itemize}
 }
 
-\cventry{Mai 2015 -- Juillet 2015}{Stage de recherche}{Laboratoire d'Annecy-Le-Vieux des Particules (LAPP - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
+\cventry{Mai 2015 -- Juillet 2015}{Stage de recherche}{Laboratoire d'Annecy-Le-Vieux de Physique Particules (LAPP - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
 Physique des particules pour l'expérience ATLAS. Supervisé par Stéphane Jézéquel.
 \begin{itemize}%
 \item Analyse des événements diphoton et calculs simplifiés de significance locale et globale avec ROOT
@@ -91,19 +152,22 @@ Physique des particules pour l'expérience ATLAS. Supervisé par Stéphane Jéz�
 }
 
 \nocite{*} % <==========================================================
-\bibliographystyle{unsrt}
-\bibliography{\jobname} % To use bib file created by filecontents
+%\bibliographystyle{apalike}
+%\bibliography{\jobname} % To use bib file created by filecontents
+\printbibliography[title={Publications}]
 
-\section{Médias}
+\section{Journalisme}
 
-\cventry{Décembre 2019 à Novembre 2020}{Président}{Société de Production Le Média}{}{Montreuil}{Administration d'une société disposant de plus de 12 équivalents temps plein. Direction de la publication. Optimisation des procédures de démarchage des client, analyse de données à des fins de ciblage, développement d'outils de gestion et de prédictions de recettes.}
+%\cventry{Novembre 2020 à Aujourd'hui}{Pigiste}{Le Média}{}{Montreuil}{Recensions d'ouvrages.}
 
-\cventry{Décembre 2019 à Septembre 2020}{Journaliste (CDI)}{Le Média}{}{Montreuil}{Spécialisation en analyse/représentation de données et recensions d'ouvrages. \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}
+\cventry{Décembre 2019 à Novembre 2020}{Président, directeur de la publication}{Société de Production Le Média}{}{Montreuil}{Administration d'une société de production audiovisuelle (web-télé) disposant de plus de 12 équivalents temps plein. Optimisation des procédures de démarchage des client, analyse de données à des fins de ciblage, développement d'outils de gestion et de prévision}
+
+\cventry{Décembre 2019 à Septembre 2020}{Journaliste (CDI)}{Le Média}{}{Montreuil}{Spécialisation en analyse/représentation de données et recensions d'ouvrages; chef d'édition. \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}. Expérience audiovisuelle en montage, cadre, réalisation en direct.
 }
 
 \cventry{Septembre 2018 -- Août 2019}{Responsable Numérique}{Le Média}{}{Montreuil}{
 \begin{itemize}
-\item Gestion de la diffusion des contenus sur les réseaux sociaux : éditorialisation, montage, sous-titrage, programmation.
+\item Gestion de la diffusion des contenus sur les réseaux sociaux : éditorialisation, montage, sous-titrage, programmation. Analyse des audiences.
 \item Production (cadrage, réalisation en direct)
 \item Post-production (montage)
 \end{itemize}
@@ -122,7 +186,7 @@ Physique des particules pour l'expérience ATLAS. Supervisé par Stéphane Jéz�
 
 \subsection{Informatique}
 \cvitem{Programmation}{Python, C, C++, Fortran}
-\cvitem{Logiciels scientifiques}{Gnuplot, Mathematica, numpy, scipy, scikit-learn, MadGraph5\_aMC\_@NLO, Pythia, ROOT/RooFit, stan}
+\cvitem{Logiciels scientifiques}{numpy, scipy, scikit-learn, MadGraph5\_aMC\_@NLO, Pythia, ROOT/RooFit, stan}
 \cvitem{Données}{Pandas, MySQL, HDF}
 \cvitem{Web}{PHP, HTML, JS, CSS}
 \cvitem{Video}{Adobe Premiere Pro}
