@@ -8,61 +8,17 @@
 \setlength{\hintscolumnwidth}{2.5cm}
 
 \RequirePackage{filecontents}
-\usepackage[backend=biber,maxbibnames=99,defernumbers=true,sorting=ydnt,giveninits=true]{biblatex}
+\usepackage[backend=biber,maxbibnames=99,sorting=ydnt,giveninits=true]{biblatex}
 
 \firstname{Lucas}
 \familyname{Gautheron}
 %\title{Etudiant en Physique}              
-\address{3 Rue Bellier-Dedouvre}{75013 Paris}    
+\address{26bis Rue Damesme}{75013 Paris}    
 \email{lucas.gautheron@gmail.com}                      
-\homepage{sciencestechniques.fr}
+\homepage{lucasgautheron.github.io}
 \mobile{06 79 23 86 47} 
 \extrainfo{29/01/1995}
 \photo[70pt][0.5pt]{photo.png}
-
-\begin{filecontents*}{\jobname.bib}
-
-@inproceedings{gautheron:hal-03047153,
-  TITLE = {{Longform recordings : Opportunities and challenges}},
-  AUTHOR = {Gautheron, Lucas and Lavechin, Marvin and Riad, Rachid and Scaff, Camila and Cristia, Alejandrina},
-  URL = {https://hal.archives-ouvertes.fr/hal-03047153},
-  BOOKTITLE = {{LIFT 2020 - 2{\`e}mes journ{\'e}es scientifiques du Groupement de Recherche ''Linguistique informatique, formelle et de terrain''}},
-  ADDRESS = {Montrouge / Virtual, France},
-  EDITOR = {Poibeau, Thierry and Parmentier, Yannick and Schang, Emmanuel},
-  PUBLISHER = {{CNRS}},
-  PAGES = {64-71},
-  YEAR = {2020},
-  MONTH = Dec,
-  KEYWORDS = {daylong recordings ; ecological validity ; automatic speech processing},
-  HAL_ID = {hal-03047153},
-  HAL_VERSION = {v1},
-}
-
-@article{Lavechin2021,
-  doi = {10.31234/osf.io/pt9xq},
-  url = {https://doi.org/10.31234/osf.io/pt9xq},
-  note = {\url{https://doi.org/10.31234/osf.io/pt9xq}},
-  year = {2021},
-  month = mar,
-  publisher = {Center for Open Science},
-  author = {Marvin Lavechin and Maureen de Seyssel and Lucas Gautheron and Emmanuel Dupoux and Alejandrina Cristia},
-  title = {Reverse-engineering language acquisition with child-centered long-form recordings},
-  journal = {Submitted to \emph{Annual Reviews of Linguistics}}
-}
-
-@article{gautheron_rochat_cristia_2021,
- title={Managing, storing, and sharing long-form recordings and their annotations},
- url={https://psyarxiv.com/w8trm},
- note = {\url{https://psyarxiv.com/w8trm}},
- DOI={10.31234/osf.io/w8trm},
- publisher={PsyArXiv},
- author={Gautheron, Lucas and Rochat, Nicolas and Cristia, Alejandrina},
- year={2021},
- month={May},
- journal={Submitted to \emph{Language Resources and Evaluation}}
-}
-\end{filecontents*}
-
 
 \def\makenamesetup{%
   \def\bibnamedelima{~}%
@@ -92,7 +48,9 @@
   {\mkbibbold{#1}}{#1}%
 }
 
-\addbibresource{\jobname.bib}
+\addbibresource{publications.bib}
+\addbibresource{talks.bib}
+
 \boldname{Gautheron}{Lucas}{L.}
 
 
@@ -100,15 +58,17 @@
 \maketitle
 
 \section{Education}
-\cventry{2021-2022}{M.A}{Université de Paris}{Paris (75)}{History and Philosophy of Science [\textit{on-going}]}{}
+\cventry{2022-2025}{PhD student}{University of Wuppertal}{Wuppertal (Allemagne)}{Dynamics of a research program in high-energy physics: the case of supersymmetry (Research Training Group 2696, ``Transformations of science and technology since 1800: topics, processes, institutions
+'') [\textit{on-going}]}{}
+\cventry{2021-2022}{M.A}{Université de Paris}{Paris (75)}{History and Philosophy of Science [\textit{on-going}]}{Dissertation: ``Who trusts supersymmetry? Probing quantitative methods for assessing research orientations in High-Energy Physics}
 \cventry{2014-2018}{Master 1}{Ecole Normale Supérieure de Cachan}{Cachan (94)}{Fundamental Physics}{Full scholarship. Experimental and theoretical physics, mathematics. Options: Symmetries and path integrals; Astrophyics and Cosmology.}
 \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy (74)}{}{``Classe préparatoire aux grandes écoles''}
-\cventry{2009 -- 2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
+% \cventry{2009 -- 2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
 
 \section{Research}
 
 \cventry{September 2020 to November 2021}{Engineer}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
-Study of language acquisition across cultures through naturalistic long-form audio recordings.
+Study of language acquisition across cultures through naturalistic long-form audio recordings. Supervised by Alejandrina Cristia.
 \begin{itemize}%
 \item Creation of a python package for the management, storage and analysis of large datasets ($\mathcal{O}(10^4)$ hours of audio)
 \item Signal processing on long-form audio
@@ -153,7 +113,9 @@ Particle physics for the ATLAS experiment. Supervised by Stéphane Jézéquel.
 
 \nocite{*} % <==========================================================
 
-\printbibliography[title={Publications}]
+\printbibliography[title={Publications},notkeyword=talks]
+\printbibliography[title={Talks},keyword=talks]
+
 
 \section{Journalism}
 
@@ -162,11 +124,10 @@ Particle physics for the ATLAS experiment. Supervised by Stéphane Jézéquel.
 \cventry{December 2019 to November 2020}{President}{Société de Production Le Média}{}{Montreuil}{Management of a production company with more than 12 full-time equivalent workers. Publication Manager.
 Marketing procedures optimization, revenue and audience data analysis, development of revenue forecasting models.}
 
-\cventry{September 2018 to September 2020}{Journalist}{Le Média}{}{Montreuil}{Specializing in data visualization and book reviews \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}.
+\cventry{Septemter 2018 to September 2020}{Journalist}{Le Média}{}{Montreuil}{Specializing in data visualization and book reviews \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}.
 }
 
-% \cventry{September 2018 -- August 2019}{Digital Manager}{Le Média}{}{Montreuil}{
-% Editorial work, Audience analysis, Post-production (editing)}
+% \cventry{September 2018 -- August 2019}{Web editor}{Le Média}{}{Montreuil}{Editorial work, Audience analysis, Post-production (editing)}
 
 \section{Development}
 
@@ -187,8 +148,8 @@ Marketing procedures optimization, revenue and audience data analysis, developme
 \cvitem{Video}{Adobe Premiere Pro}
 
 \subsection{Languages}
-\cvlanguage{English}{C1-C2}{}
-\cvlanguage{French}{}{}
+\cvlanguage{English}{Toefl IBT: 104}{}
+\cvlanguage{French}{Native}{}
 \cvlanguage{Spanish}{Beginner}{}
 
 \end{document}
