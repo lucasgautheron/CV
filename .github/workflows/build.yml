@@ -15,7 +15,7 @@ jobs:
       - name: Install texlive
         run: sudo apt install texlive-base texlive-xetex
       - name: Install texlive-latex-extra
-        run: sudo apt-get install texlive-latex-extra
+        run: sudo apt-get install texlive-latex-extra texlive-fonts-extra
       - name: Build cv
         run: xelatex main.tex -o output/cv.pdf
       - name: Build english cv
