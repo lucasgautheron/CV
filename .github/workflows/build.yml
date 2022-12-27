@@ -17,12 +17,12 @@ jobs:
       - name: Install texlive extra
         run: sudo apt-get install texlive-latex-extra texlive-fonts-extra  texlive-bibtex-extra biber
       - name: Build cv
-        run: xelatex main.tex -o output/cv.pdf
+        run: pdflatex main.tex -o output/cv.pdf
       - name: Build english cv
-        run: xelatex main_en.tex -o output/cv_en.pdf
+        run: pdflatex main_en.tex -o output/cv_en.pdf
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with: 
-          commit-message: xelatex build
-          branch: xelatex_build
-          title: '[CI] xelatex build'
+          commit-message: pdflatex build
+          branch: pdflatex_build
+          title: '[CI] pdflatex build'
