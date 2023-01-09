@@ -17,17 +17,15 @@ jobs:
       - name: Install texlive extra
         run: sudo apt-get install texlive-latex-extra texlive-fonts-extra  texlive-bibtex-extra biber
       - name: Build cv
-        run: |
-         - pdflatex main.tex -o output/cv.pdf
-         - bibtex main.tex
-         - pdflatex main.tex 
-         - pdflatex main.tex 
+      - run: pdflatex main.tex -o output/cv.pdf
+      - run: bibtex main.tex
+      - run: pdflatex main.tex 
+      - run: pdflatex main.tex 
       - name: Build english cv
-        run: |
-         - pdflatex main.tex
-         - bibtex main.tex
-         - pdflatex main.tex 
-         - pdflatex main.tex 
+      - run: pdflatex main.tex
+      - run: bibtex main.tex
+      - run: pdflatex main.tex 
+      - run: pdflatex main.tex 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with: 
