@@ -5,7 +5,7 @@
 \moderncvtheme[blue]{classic}
 \AtBeginDocument{\recomputelengths}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1.1cm, bottom=1.1cm, left=1.8cm, right=1.8cm]{geometry}
 \setlength{\hintscolumnwidth}{2.5cm}
 
 \RequirePackage{filecontents}
@@ -13,13 +13,17 @@
 
 \firstname{Lucas}
 \familyname{Gautheron}
-%\title{Etudiant en Physique}              
+\title{Computational Models of Human \& Social Behavior}              
 % \address{242 Rue de Tolbiac}{75013 Paris}    
 \email{lucas.gautheron@gmail.com}                      
 \homepage{lucasgautheron.github.io}
-\mobile{06 79 23 86 47} 
+\mobile{+33 6 79 23 86 47} 
 \extrainfo{29/01/1995}
 % \photo[70pt][0.5pt]{photo.png}
+
+\usepackage{lastpage}
+
+\rfoot{\vspace{-2em}\textcolor{gray}{\textit{\small{\thepage/\pageref{LastPage}}}}}
 
 \def\makenamesetup{%
   \def\bibnamedelima{~}%
@@ -59,18 +63,17 @@
 \maketitle
 
 \section{Education}
-\cventry{2022-2025}{PhD student}{University of Wuppertal}{Germany}{Research dynamics in high-energy physics (Research Training Group 2696, ``Transformations of science and technology since 1800: topics, processes, institutions
-'') [\textit{on-going}]. $3^{1/2}$ years contract}{}
-\cventry{2021-2022}{M.A}{Université Paris-Cité}{}{History and Philosophy of Science [Class rank: 1st]}{Thesis : ``Too beautiful to be false, or too beautiful to be true? Searching supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol, Elisa Omodei.} 
-\cventry{2014-2018}{Master 1}{Ecole Normale Supérieure de Cachan (Paris-Saclay)}{}{Fundamental Physics}{Full scholarship with a civil-servant status after a competitive entrance exam.}
-\cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{``Classe préparatoire aux grandes écoles''}
-% \cventry{2009 -- 2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
+\cventry{2022-2025}{PhD student}{Interdisciplinary Centre for Science and Technology Studies,  Wuppertal}{Germany}{Modeling research dynamics in high-energy physics. $3^{1/2}$ years contract}{}
+\cventry{2021-2022}{M.A}{Université Paris-Cité}{}{History and Philosophy of Science [Class rank: 1st]}{Thesis : ``Too beautiful to be false, or too beautiful to be true? Searching supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol \& Elisa Omodei.} 
+\cventry{2014-2018}{Master 1}{Ecole Normale Supérieure de Cachan (Paris-Saclay)}{}{Fundamental Physics}{Full scholarship \& civil-servant status.}
+\cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Maths, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (research oriented top higher education institutions).}
+% \cventry{2009\\2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
 
 \section{Research}
 
-\cventry{Mar 2023 to Feb 2024}{Research Assistant \small{(part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
-\cventry{Feb 2023--Jul 2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
-\cventry{Sep 2020 to Nov 2021}{Engineer}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
+\cventry{Mar~2023\\on-going}{Research Assistant \small{(part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
+\cventry{Feb~2023\\Aug~2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
+\cventry{Sep 2020\\Nov~2021}{Engineer}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
 Study of language acquisition across cultures through naturalistic long-form audio recordings.
 %Supervised by Alejandrina Cristia.
 % \begin{itemize}%
@@ -81,14 +84,14 @@ Study of language acquisition across cultures through naturalistic long-form aud
 % \end{itemize}
 }
 
-\cventry{Oct 2016 -- Jan 2017}{Research Internship}{Laboratoire Univers et Théories (LUTH - INSU - CNRS)}{}{Paris Meudon}{
-Influence of the nuclei distribution on weak interactions in core-collapse supernovae.  %Supervised by Micaela Oertel. 
+\cventry{Oct 2016\\Jan~2017}{Research Internship}{Laboratoire Univers et Théories (LUTH - INSU - CNRS)}{}{Paris Meudon}{
+Influence of the nuclei distribution on weak interactions' rates in core-collapse supernovae.  %Supervised by Micaela Oertel. 
 % \begin{itemize}%
 % \item Implementation of electron capture rates and neutrino scattering cross-sections calculations in a core-collapse supernova simulation code (Fortran, C++).
 % \end{itemize}
 }
 
-\cventry{May 2016 -- Jul 2016}{Research Internship}{Laboratoire de Physique Nucléaire et des Hautes Énergies (LPNHE - IN2P3 - CNRS)}{}{Paris}{
+\cventry{May~2016\\Jul~2016}{Research Internship}{Laboratoire de Physique Nucléaire et des Hautes Énergies (LPNHE - IN2P3 - CNRS)}{}{Paris}{
 Diphoton analysis and phenomenology for the ATLAS experiment. %Supervised by Lydia Roos. [signal modeling \& parametrization, effective field theories]
 % \begin{itemize}%
 % \item New parameterization of the diphoton invariant mass distribution for a spin-2 decaying particle signal (Pythia, ROOT, RooFit, C++, Python, FeynRules, CalcHEP)
@@ -97,8 +100,8 @@ Diphoton analysis and phenomenology for the ATLAS experiment. %Supervised by Lyd
 % \end{itemize}
 }
 
-\cventry{Oct 2015 -- Jan 2016}{Research Internship}{Laboratoire d'Annecy-Le-Vieux de Physique Théorique (LAPth - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
-The History of Modern Cosmology.
+\cventry{Oct~2015\\Jan~2016}{Research Internship}{Laboratoire d'Annecy-Le-Vieux de Physique Théorique (LAPth - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
+History of modern cosmology.
 %Supervised par Richard Taillet.
 % \begin{itemize}%
 % \item Creation of an Internet website for students about the history of modern cosmology (\href{http://cosmology.education/}{http://cosmology.education/})
@@ -106,7 +109,7 @@ The History of Modern Cosmology.
 % \end{itemize}
 }
 
-\cventry{May 2015 -- Jul 2015}{Research Internship}{Laboratoire d'Annecy-Le-Vieux des Particules (LAPP - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
+\cventry{May~2015\\Jul~2015}{Research Internship}{Laboratoire d'Annecy-Le-Vieux des Particules (LAPP - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
 Particle physics for the ATLAS experiment.
 %Supervised by Stéphane Jézéquel.
 % \begin{itemize}%
@@ -134,35 +137,26 @@ Particle physics for the ATLAS experiment.
 
 %\cventry{Novembre 2020 à Aujourd'hui}{Pigiste}{Le Média}{}{Montreuil}{Recensions d'ouvrages.}
 
-\cventry{Dec 2019 to Nov 2020}{President \& Publication Manager}{Société de Production Le Média}{}{Montreuil}{Head of a production company with 12+ full-time equivalent workers.
-Marketing procedures optimization, development of revenue forecasting models and audience data analysis.}
+\cventry{Dec~2019\\Nov~2020}{President \& Publication Manager}{Société de Production Le Média}{}{Montreuil}{Head of a production company with 12+ full-time workers.
+%Marketing procedures optimization, development of revenue forecasting models and audience data analysis.
+}
 
-\cventry{September 2018 to Sep 2020}{Journalist}{Le Média}{}{Montreuil}{Data journalism and book reviews \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}.
+\cventry{Sep~2018\\Sep~2020}{Journalist}{Le Média}{}{Montreuil}{Data journalism and book reviews \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}.
 }
 
 \printbibliography[title={Selected press articles},keyword=press]
 
 \section{Programming}
 
-\cventry{Jul 2013}{Developer}{Électricité réseau Distribution de France (ErDF)}{Annecy}{}{
-\begin{itemize}%
-\item Design of an archive database and search system (PHP/MySQL)
-\item Automated retrieval of large amounts of data from other company-wide applications. 
-\end{itemize}}
-\cventry{Mars 2011 à 2014}{Developer}{AssaultCube}{}{}{Development of a C++ 3D video game as part of an international team of volunteers}
+\cventry{Jul~2013}{Back-end developer}{Électricité réseau Distribution de France (ErDF)}{Annecy}{}{%
+Automated retrieval of large amounts of data from other company-wide applications.}
+\cventry{2011\\2014}{Volunteer}{AssaultCube}{}{}{Development of a C++ 3D video game as part of an international team of volunteers.}
 
-\section{Skills}
+\section{Skills \& interests}
 
-\subsection{Computer}
-\cvitem{Programming}{Python, C, C++, Fortran, Arduino}
-\cvitem{Scientific software}{stan, numpy, scipy, cvxpy, scikit-learn, ROOT/RooFit}
-\cvitem{Data}{Pandas, SQL, HDF}
-\cvitem{Web}{PHP, HTML, JS, CSS}
-% \cvitem{Video}{Adobe Premiere Pro}
+\cvitem{Programming}{Python, and some C, C++, Fortran \& Arduino; Stan, PyTorch; Pandas, SQL, HDF; PHP, HTML, JS}
+\cvitem{Languages}{French, English (iBT 104); Spanish (beginner)}
+\cvitem{Interests}{Energy transition; climate change and the polycrisis; microcontroller programming}
 
-\subsection{Languages}
-\cvlanguage{English}{Toefl IBT: 104}{}
-\cvlanguage{French}{Native}{}
-\cvlanguage{Spanish}{Beginner}{}
 
 \end{document}
