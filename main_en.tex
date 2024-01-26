@@ -1,15 +1,32 @@
 % !TEX TS-program = lualatex
 
 \AtBeginDocument{\hypersetup{pdfborder = 0 1 1, linkcolor=blue}}
-\documentclass[11pt,a4paper]{moderncv}
-\moderncvtheme[blue]{classic}
+\documentclass[11pt,a4paper,dvipsnames]{moderncv}
+\moderncvtheme[green]{classic}
 \AtBeginDocument{\recomputelengths}
 \usepackage[utf8]{inputenc}
 \usepackage[top=1.1cm, bottom=1.1cm, left=1.8cm, right=1.8cm]{geometry}
 \setlength{\hintscolumnwidth}{2.5cm}
 
 \RequirePackage{filecontents}
-\usepackage[backend=bibtex,maxbibnames=99,sorting=ydnt,giveninits=true,doi=false]{biblatex}
+\usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom]{biblatex}
+
+\DeclareSortingTemplate{custom}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+\field[padside=left,padwidth=2,padchar=0]{month}
+    \literal{00}
+  }
+}
 
 \firstname{Lucas}
 \familyname{Gautheron}
@@ -58,22 +75,36 @@
 
 \boldname{Gautheron}{Lucas}{L.}
 
-
 \begin{document}
+\hypersetup{
+linkcolor=BrickRed
+,citecolor=Green
+,filecolor=Mulberry
+,urlcolor=NavyBlue
+,menucolor=BrickRed
+,runcolor=Mulberry
+,linkbordercolor=BrickRed
+,citebordercolor=Green
+,filebordercolor=Mulberry
+,urlbordercolor=Green
+,menubordercolor=BrickRed
+,runbordercolor=Mulberry
+}
+
 \maketitle
 
 \section{Education}
-\cventry{2022-2025}{PhD candidate in Sociology}{Interdisciplinary Centre for Science and Technology Studies, Wuppertal}{Germany}{ \newline ``Modeling research dynamics in high-energy physics''. Supervisors: Thomas Heinze \& Radin Dardashti. $3^{1/2}$ years work contract}{}
-\cventry{2021-2022}{MA in History and Philosophy of Science}{Université Paris-Cité}{}{[Rank: 1st]}{Thesis : ``Too beautiful to be false, or too beautiful to be true? Searching supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol \& Elisa Omodei.} 
-\cventry{2014-2018}{Master 1 in Theoretical and Experimental Physics}{Ecole Normale Supérieure de Cachan (Paris-Saclay)}{}{}{Full scholarship \& civil-servant status.}
+\cventry{2022-2025}{Ph.D. candidate, Sociology}{Interdisciplinary Centre for Science and Technology Studies, Wuppertal}{Germany}{}{``Modeling research dynamics in high-energy physics''. Supervisors: Thomas Heinze \& Radin Dardashti. $3^{1/2}$ years contract.}
+\cventry{2021-2022}{M.A., History and Philosophy of Science}{Université Paris-Cité}{}{[Class rank: 1st]}{Thesis : ``Too beautiful to be false, or too beautiful to be true? Searching supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol \& Elisa Omodei.} 
+\cventry{2014-2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure de Cachan (Paris-Saclay)}{}{}{Full scholarship \& civil-servant status.}
 \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (research oriented top higher education institutions).}
 % \cventry{2009\\2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
 
 \section{Research}
 
-\cventry{Mar~2023\\on-going}{Research Assistant \small{(part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
+\cventry{Mar~2023\\on-going}{Research Assistant \small{(linguistics, part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
 \cventry{Feb~2023\\Aug~2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
-\cventry{Sep 2020\\Nov~2021}{Engineer}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
+\cventry{Sep 2020\\Nov~2021}{Engineer (linguistics)}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
 Study of language acquisition across cultures through naturalistic long-form audio recordings.
 %Supervised by Alejandrina Cristia.
 % \begin{itemize}%
@@ -84,14 +115,14 @@ Study of language acquisition across cultures through naturalistic long-form aud
 % \end{itemize}
 }
 
-\cventry{Oct 2016\\Jan~2017}{Research Internship}{Laboratoire Univers et Théories (LUTH - INSU - CNRS)}{}{Paris Meudon}{
+\cventry{Oct 2016\\Jan~2017}{Research Internship (astrophysics)}{Laboratoire Univers et Théories (LUTH - INSU - CNRS)}{}{Paris Meudon}{
 Influence of the nuclei distribution on weak interactions' rates in core-collapse supernovae.  %Supervised by Micaela Oertel. 
 % \begin{itemize}%
 % \item Implementation of electron capture rates and neutrino scattering cross-sections calculations in a core-collapse supernova simulation code (Fortran, C++).
 % \end{itemize}
 }
 
-\cventry{May~2016\\Jul~2016}{Research Internship}{Laboratoire de Physique Nucléaire et des Hautes Énergies (LPNHE - IN2P3 - CNRS)}{}{Paris}{
+\cventry{May~2016\\Jul~2016}{Research Internship (particle physics)}{Laboratoire de Physique Nucléaire et des Hautes Énergies (LPNHE - IN2P3 - CNRS)}{}{Paris}{
 Diphoton analysis and phenomenology for the ATLAS experiment. %Supervised by Lydia Roos. [signal modeling \& parametrization, effective field theories]
 % \begin{itemize}%
 % \item New parameterization of the diphoton invariant mass distribution for a spin-2 decaying particle signal (Pythia, ROOT, RooFit, C++, Python, FeynRules, CalcHEP)
@@ -100,8 +131,8 @@ Diphoton analysis and phenomenology for the ATLAS experiment. %Supervised by Lyd
 % \end{itemize}
 }
 
-\cventry{Oct~2015\\Jan~2016}{Research Internship}{Laboratoire d'Annecy-Le-Vieux de Physique Théorique (LAPth - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
-History of modern cosmology.
+\cventry{Oct~2015\\Jan~2016}{Research Internship (astrophysics)}{Laboratoire d'Annecy-Le-Vieux de Physique Théorique (LAPth - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
+History of modern cosmology \& science communication (\href{https://cosmology.education/}{website})
 %Supervised par Richard Taillet.
 % \begin{itemize}%
 % \item Creation of an Internet website for students about the history of modern cosmology (\href{http://cosmology.education/}{http://cosmology.education/})
@@ -109,7 +140,7 @@ History of modern cosmology.
 % \end{itemize}
 }
 
-\cventry{May~2015\\Jul~2015}{Research Internship}{Laboratoire d'Annecy-Le-Vieux des Particules (LAPP - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
+\cventry{May~2015\\Jul~2015}{Research Internship (particle physics)}{Laboratoire d'Annecy-Le-Vieux des Particules (LAPP - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
 Particle physics for the ATLAS experiment.
 %Supervised by Stéphane Jézéquel.
 % \begin{itemize}%
@@ -141,7 +172,7 @@ Particle physics for the ATLAS experiment.
 %Marketing procedures optimization, development of revenue forecasting models and audience data analysis.
 }
 
-\cventry{Sep~2018\\Sep~2020}{Journalist}{Le Média}{}{Montreuil}{Data journalism and book reviews \url{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}.
+\cventry{Sep~2018\\Sep~2020}{Journalist}{Le Média}{}{Montreuil}{ \href{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}{Data journalism and book reviews}.
 }
 
 \printbibliography[title={Selected press articles},keyword=press]
@@ -154,7 +185,7 @@ Automated retrieval of large amounts of data from other company-wide application
 
 \section{Skills \& interests}
 
-\cvitem{Programming}{Python, and some C, C++, Fortran \& Arduino; Stan, PyTorch; Pandas, SQL, HDF; PHP, HTML, JS}
+\cvitem{Programming}{Python (expert), and C, C++, Fortran \& Arduino (proficient); Stan, PyTorch; Pandas, SQL, HDF; PHP, HTML, JS}
 \cvitem{Languages}{French (native), English (fluent/C2); Spanish (beginner)}
 \cvitem{Interests}{Energy transition; climate change and the polycrisis; microcontroller programming}
 
