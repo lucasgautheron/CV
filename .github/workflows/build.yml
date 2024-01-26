@@ -19,13 +19,13 @@ jobs:
       - name: Build cv
         run: |
           pdflatex main.tex
-          bibtex main
+          biber main
           pdflatex main.tex 
           pdflatex main.tex 
       - name: Build english cv
         run: |
           pdflatex main_en.tex
-          bibtex main_en
+          biber main_en
           pdflatex main_en.tex 
           pdflatex main_en.tex 
       - name: Create pull request
