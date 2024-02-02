@@ -14,6 +14,7 @@
 \DeclareSortingTemplate{custom}{
   \sort{
     \field{presort}
+    \literal{9999}
   }
   \sort[final]{
     \field{sortkey}
@@ -94,7 +95,7 @@ linkcolor=BrickRed
 \maketitle
 
 \section{Education}
-\cventry{2022-2025}{Ph.D. candidate, Sociology}{Interdisciplinary Centre for Science and Technology Studies, Wuppertal}{Germany}{}{``Modeling research dynamics in high-energy physics''. Supervisors: Thomas Heinze \& Radin Dardashti. $3^{1/2}$ years contract.}
+\cventry{\textbf{2022-2025}}{Ph.D. candidate, Sociology}{Interdisciplinary Centre for Science and Technology Studies, Wuppertal}{Germany}{}{``Modeling research dynamics in high-energy physics''. Supervisors: Thomas Heinze \& Radin Dardashti. $3^{1/2}$ years contract.}
 \cventry{2021-2022}{M.A., History and Philosophy of Science}{Université Paris-Cité}{}{[Class rank: 1st]}{Thesis : ``Too beautiful to be false, or too beautiful to be true? Searching supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol \& Elisa Omodei.} 
 \cventry{2014-2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure de Cachan (Paris-Saclay)}{}{}{Full scholarship \& civil-servant status.}
 \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (research oriented top higher education institutions).}
@@ -102,7 +103,7 @@ linkcolor=BrickRed
 
 \section{Research}
 
-\cventry{Mar~2023\\on-going}{Research Assistant \small{(linguistics, part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
+\cventry{\textbf{Mar~2023\\(on-going)}}{Research Assistant \small{(linguistics, part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
 \cventry{Feb~2023\\Aug~2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
 \cventry{Sep 2020\\Nov~2021}{Engineer (linguistics)}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
 Study of language acquisition across cultures through naturalistic long-form audio recordings.
@@ -153,10 +154,13 @@ Particle physics for the ATLAS experiment.
 
 \nocite{*} % <==========================================================
 
+\defbibfilter{contributed}{%
+    keyword=contributedtalks or keyword=conferenceproceedings
+}
 \printbibliography[title={Preprints},keyword=preprints]
 \printbibliography[title={Peer-Reviewed Publications},keyword=publications]
 \printbibliography[title={Invited Talks},keyword=invitedtalks]
-\printbibliography[title={Contributed Talks},keyword=contributedtalks]
+\printbibliography[title={Contributed Talks},filter=contributed]
 
 % \printbibliography[title={Seminar Talks},keyword=seminartalks]
 
@@ -168,11 +172,11 @@ Particle physics for the ATLAS experiment.
 
 %\cventry{Novembre 2020 à Aujourd'hui}{Pigiste}{Le Média}{}{Montreuil}{Recensions d'ouvrages.}
 
-\cventry{Dec~2019\\Nov~2020}{President \& Publication Manager}{Société de Production Le Média}{}{Montreuil}{Head of a production company with 12+ full-time workers.
+\cventry{Dec~2019\\Nov~2020}{President \& Publication Director}{Société de Production Le Média}{}{Montreuil}{Head of a production company with 12+ full-time workers.
 %Marketing procedures optimization, development of revenue forecasting models and audience data analysis.
 }
 
-\cventry{Sep~2018\\Sep~2020}{Journalist}{Le Média}{}{Montreuil}{ \href{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}{Data journalism and book reviews}.
+\cventry{Sep~2018\\Sep~2020}{Journalist}{Le Média}{}{Montreuil}{ \href{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}{Data journalism and book reviews, text \& video} (articles cited in research papers and books, and in \href{https://www.anticor.org/2019/09/10/adp-depot-dune-reclamation-au-conseil-constitutionnel-pour-briser-le-silence-autour-du-rip/}{an appeal to the French constitutional court}).
 }
 
 \printbibliography[title={Selected press articles},keyword=press]
