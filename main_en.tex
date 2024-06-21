@@ -12,6 +12,14 @@
 \RequirePackage{filecontents}
 \usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom]{biblatex}
 
+% Make titles clickable rather than showing urls
+\ExecuteBibliographyOptions{url=false}
+\newbibmacro{string+url}[1]{%
+  \iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+url}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+url}{\mkbibquote{#1}}}
+\DeclareFieldFormat[unpublished]{title}{\usebibmacro{string+url}{\mkbibquote{#1}}}
+
 \DeclareSortingTemplate{custom}{
   \sort{
     \field{presort}
