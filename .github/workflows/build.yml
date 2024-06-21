@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Update package list
+        run: sudo apt update
       - name: Install texlive
         run: sudo apt install texlive-base texlive-xetex
       - name: Install texlive extra
