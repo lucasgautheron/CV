@@ -1,6 +1,6 @@
 % !TEX TS-program = lualatex
 
-\AtBeginDocument{\hypersetup{pdfborder = 0 1 1, linkcolor=blue}}
+\AtBeginDocument{\hypersetup{pdfborder = 0 1 1, linkcolor=blue,colorlinks=true}}
 \documentclass[10pt,a4paper,dvipsnames]{moderncv}
 \usepackage[10pt]{extsizes}
 \moderncvtheme[green]{classic}
@@ -86,19 +86,14 @@
 \boldname{Gautheron}{Lucas}{L.}
 
 \begin{document}
+\definecolor{DarkGreen}{RGB}{1,125,32}
 \hypersetup{
-linkcolor=BrickRed
+colorlinks=true,
+linkcolor=DarkGreen,
+urlcolor=DarkGreen,
 ,citecolor=Green
-,filecolor=Mulberry
-,urlcolor=NavyBlue
-,menucolor=BrickRed
-,runcolor=Mulberry
-,linkbordercolor=BrickRed
 ,citebordercolor=Green
-,filebordercolor=Mulberry
 ,urlbordercolor=Green
-,menubordercolor=BrickRed
-,runbordercolor=Mulberry
 }
 
 \maketitle
