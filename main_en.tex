@@ -7,10 +7,10 @@
 \AtBeginDocument{\recomputelengths}
 \usepackage[utf8]{inputenc}
 \usepackage[top=1.1cm, bottom=1.1cm, left=1.8cm, right=1.8cm]{geometry}
-\setlength{\hintscolumnwidth}{2.5cm}
+\setlength{\hintscolumnwidth}{2cm}
 
 \RequirePackage{filecontents}
-\usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom]{biblatex}
+\usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom,defernumbers=true]{biblatex}
 
 % Make titles clickable rather than showing urls
 \ExecuteBibliographyOptions{url=false}
@@ -163,11 +163,14 @@ Particle physics for the ATLAS experiment.
 \defbibfilter{contributed}{%
     keyword=contributedtalks or keyword=conferenceproceedings
 }
-\printbibliography[title={Preprints},keyword=preprints]
-\printbibliography[title={Peer-Reviewed Publications},keyword=publications]
-\printbibliography[title={Invited Talks},keyword=invitedtalks]
-\printbibliography[title={Contributed Talks},filter=contributed]
-\printbibliography[title={Poster presentations},keyword=posters]
+\newrefcontext[labelprefix=A]
+\printbibliography[title={Preprints},keyword=preprints, resetnumbers=false]
+\printbibliography[title={Peer-Reviewed Publications},keyword=publications, resetnumbers=false]
+\newrefcontext[labelprefix=T]
+\printbibliography[title={Invited Talks},keyword=invitedtalks,resetnumbers=true]
+\printbibliography[title={Contributed Talks},filter=contributed, resetnumbers=false]
+\newrefcontext[labelprefix=P]
+\printbibliography[title={Poster presentations},keyword=posters, resetnumbers=true]
 
 \section{Tutorials}
 
@@ -199,7 +202,8 @@ Particle physics for the ATLAS experiment.
 \cventry{Sep~2018\\Sep~2020}{Journalist}{Le Média}{}{Montreuil}{ \href{https://www.lemediatv.fr/auteurs/lucas-gautheron-9DAnWoo5Tlav1trWgg_Qlw/articles}{Data journalism and book reviews, text \& video} (articles cited in research papers and books, and in \href{https://www.anticor.org/2019/09/10/adp-depot-dune-reclamation-au-conseil-constitutionnel-pour-briser-le-silence-autour-du-rip/}{an appeal to the French constitutional court}).
 }
 
-\printbibliography[title={Selected press articles},keyword=press]
+\newrefcontext[labelprefix=M]
+\printbibliography[title={Selected press articles},keyword=press,resetnumbers=true]
 
 \section{Programming}
 
