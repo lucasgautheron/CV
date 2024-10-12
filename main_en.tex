@@ -6,7 +6,7 @@
 \moderncvtheme[green]{classic}
 \AtBeginDocument{\recomputelengths}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1.1cm, bottom=1.1cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage[top=0.72in, bottom=0.72in, left=1.7cm, right=0.75in]{geometry}
 \setlength{\hintscolumnwidth}{2cm}
 
 \RequirePackage{filecontents}
@@ -84,6 +84,8 @@
 \addbibresource{talks.bib}
 
 \AtEveryBibitem{\clearfield{tags}}
+\AtEveryBibitem{\clearfield{issn}}
+\AtEveryBibitem{\clearfield{pages}}
 
 \boldname{Gautheron}{Lucas}{L.}
 
@@ -103,21 +105,23 @@ urlcolor=DarkGreen,
 
 \maketitle
 
-\textbf{\textcolor{moderncvgreen}{Areas of Specialization} \ collective intelligence, computational modelling}
+\vspace{-1.75em}
+\textbf{\textcolor{moderncvgreen}{Areas of Specialization} \ collective intelligence, computational social science}
 
 \section{Education}
-\cventry{\textbf{2022-2025}}{Ph.D. candidate, Computational Sociology}{Interdisciplinary Centre for Science and Technology Studies, Wuppertal}{Germany}{}{``Social dilemmas in high-energy physics: a computational approach''. Supervisors: Thomas Heinze \& Radin Dardashti. $3^{1/2}$ years contract.}
-\cventry{2021-2022}{M.A., History and Philosophy of Science}{Université Paris-Cité}{}{[Class rank: 1st]}{Thesis : ``Too beautiful to be false, or too beautiful to be true? Searching supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol \& Elisa Omodei.} 
+\cventry{\textbf{2022-2025}}{Ph.D. candidate, Computational Sociology}{Interdisciplinary Centre for Science and Technology Studies, Wuppertal}{Germany}{}{``Social dilemmas in high-energy physics: a computational approach''. Supervisors: Thomas Heinze \& Radin Dardashti. $3^{1/2}$-year contract.}
+\cventry{2021-2022}{M.A., History and Philosophy of Science}{Université Paris-Cité}{}{[Class rank: 1\textsuperscript{st}]}{Thesis : ``Too Beautiful to be False, or Too Beautiful to be True? Searching for supersymmetry at the \textit{Large Hadron Collider}''. Supervisors: Olivier Darrigol \& Elisa Omodei.} 
 \cventry{2014-2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure de Cachan (Paris-Saclay)}{}{}{Full scholarship \& civil-servant status.}
-\cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (research oriented top higher education institutions).}
+\cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (top research oriented higher education institutions).}
 % \cventry{2009\\2012}{Baccalauréat S option SI}{Lycée Louis Lachenal}{Argonay (74)}{}{}
 
 \section{Research}
 
 \cventry{\textbf{Mar~2023\\(on-going)}}{Research Assistant \small{(linguistics, part time)}}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{Investigating correlations between speech heard and produced by young infants.}
 \cventry{Feb~2023\\Aug~2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
+% \cventry{2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
 \cventry{Sep 2020\\Nov~2021}{Engineer (linguistics)}{Laboratoire de Sciences Cognitives et Psycholinguistique (LSCP - DEC - École Normale Supérieure)}{}{Paris}{
-Study of language acquisition across cultures through naturalistic long-form audio recordings.
+Language acquisition across cultures through naturalistic long-form audio recordings.
 %Supervised by Alejandrina Cristia.
 % \begin{itemize}%
 % \item Creation of a python package for the management, storage and analysis of large datasets ($\mathcal{O}(10^4)$ hours of audio)
@@ -144,7 +148,7 @@ Diphoton analysis and phenomenology for the ATLAS experiment. %Supervised by Lyd
 }
 
 \cventry{Oct~2015\\Jan~2016}{Research Internship (astrophysics)}{Laboratoire d'Annecy-Le-Vieux de Physique Théorique (LAPth - IN2P3 - CNRS)}{}{Annecy-Le-Vieux}{
-History of modern cosmology \& science communication (\href{https://cosmology.education/}{website})
+History of modern cosmology \& science communication (\href{https://cosmology.education/}{website} -- $7\,500$ users/year)
 %Supervised par Richard Taillet.
 % \begin{itemize}%
 % \item Creation of an Internet website for students about the history of modern cosmology (\href{http://cosmology.education/}{http://cosmology.education/})
@@ -177,24 +181,24 @@ Particle physics for the ATLAS experiment.
 \newrefcontext[labelprefix=P]
 \printbibliography[title={Poster presentations},keyword=posters, resetnumbers=true]
 
-\section{Tutorials}
+\section{Teaching and training}
 
-\begin{itemize}
-    \item Tutorial for language acquisition scientists (``LongFoRMer: A software for managing and exploiting longform recordings and their annotations''), UCLA, Department of Linguistics. June 17th 2024.
-
-\end{itemize}
-
-% \printbibliography[title={Seminar Talks},keyword=seminartalks]
-
-\section{Workshops and summer schools}
-
-\cventry{2024}{Santa Fe Institute Graduate Workshop in Computational Social Science Modeling and Complexity}{}{}{Santa Fe, New Mexico}{}
-\cventry{2023}{Summer school ``Collaboration and Interdisciplinarity in Science and Technology''}{}{Interdisciplinary Summer School Series in Higher Education Research and Science Studies}{Wuppertal, Germany}{}
-\cventry{2022}{Spring school ``The History, Philosophy and Sociology of Large Scale Experiments''}{4th International Spring School of the Epistemology of the Large Hadron Collider}{}{Wuppertal, Germany}{}
+\cventry{Dec. 13th 2024}{\textit{(Scheduled)} Guest Lecturer in Philosophy}{``Agent-Based Modelling meets Data: mixed formal/empirical approaches for the philosophy of science''}{}{Ruhr University Bochum, Germany}{}
+\cventry{Jun. 17th 2024}{Tutorial for Language Acquisition researchers}{``LongFoRMer: A software for managing and exploiting longform recordings and their annotations''}{}{UCLA, Department of Linguistics, Los Angeles, CA, United States}{}
+\newrefcontext[labelprefix=B]
+\printbibliography[heading=none,keyword=teachingmaterial, resetnumbers=true]
 
 \section{Service}
 
-\cventry{2024}{Workshop ``\href{https://grk2696.de/physics-workshop/}{Methodological Transformations in Fundamental Physics}''}{Co-organizer}{}{Wuppertal, Germany}{}
+\cventry{2024}{Workshop ``\href{https://grk2696.de/physics-workshop/}{Methodological Transformations in Fundamental Physics}'' (September 16\textsuperscript{th}-18\textsuperscript{th})}{Co-organizer}{}{Wuppertal, Germany}{}
+
+\section{Graduate Workshops and Summer Schools attended}
+
+\cventry{2024}{Santa Fe Institute Graduate Workshop in Computational Social Science Modeling and Complexity}{}{}{Santa Fe, NM, United States}{}
+\cventry{2023}{Summer school ``Collaboration and Interdisciplinarity in Science and Technology''}{}{Interdisciplinary Summer School Series in Higher Education Research and Science Studies}{Wuppertal, Germany}{}
+\cventry{2022}{Spring school ``The History, Philosophy and Sociology of Large Scale Experiments''}{4\textsuperscript{th} International Spring School of the Epistemology of the Large Hadron Collider}{}{Wuppertal, Germany}{}
+
+
 \section{Grants}
 
 \cventry{2023}{G-Research}{Grants for PhD students and postdocs in quantitative fields; \textsterling1\,000}{}{}{}
@@ -215,6 +219,8 @@ Particle physics for the ATLAS experiment.
 
 \section{Programming}
 
+\cventry{2020\\On-going}{LongFoRMer}{A python package for managing and exploiting longform recordings and their annotations}{\url{https://github.com/LAAC-LSCP/ChildProject}}{}{%
+}
 \cventry{Jul~2013}{Back-end developer}{Électricité réseau Distribution de France (ErDF)}{Annecy}{}{%
 Automated retrieval of large amounts of data from other company-wide applications.}
 \cventry{2011\\2014}{Volunteer}{AssaultCube}{}{}{Development of a C++ 3D video game as part of an international team of volunteers.}
@@ -224,6 +230,5 @@ Automated retrieval of large amounts of data from other company-wide application
 \cvitem{Programming}{Python (expert), and C, C++, Fortran \& Arduino (proficient); Stan, PyTorch; Pandas, SQL, HDF; PHP, HTML, JS}
 \cvitem{Languages}{French (native), English (fluent/C2); Spanish (beginner)}
 \cvitem{Interests}{Energy transition; climate change and the polycrisis; microcontroller programming}
-
 
 \end{document}
