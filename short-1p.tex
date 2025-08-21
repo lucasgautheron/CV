@@ -1,0 +1,180 @@
+% !TEX TS-program = lualatex
+
+\AtBeginDocument{\hypersetup{pdfborder = 0 1 1, linkcolor=blue,colorlinks=true}}
+\documentclass[10pt,a4paper,dvipsnames]{moderncv}
+\usepackage[11pt]{extsizes}
+\moderncvtheme[green]{classic}
+\AtBeginDocument{\recomputelengths}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.72in, bottom=0.72in, left=1.7cm, right=0.75in]{geometry}
+\setlength{\hintscolumnwidth}{2cm}
+
+\RequirePackage{filecontents}
+\usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom,defernumbers=true]{biblatex}
+
+% Make titles clickable rather than showing urls
+\ExecuteBibliographyOptions{url=false}
+\newbibmacro{string+url}[1]{%
+  \iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+url}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+url}{\mkbibquote{#1}}}
+\DeclareFieldFormat[unpublished]{title}{\usebibmacro{string+url}{\mkbibquote{#1}}}
+
+\DeclareSortingTemplate{custom}{
+  \sort{
+    \field{presort}
+    \literal{9999}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+\field[padside=left,padwidth=2,padchar=0]{month}
+    \literal{00}
+  }
+}
+
+\firstname{Lucas}
+\familyname{Gautheron}
+\title{Computational Models of Human \& Social Behavior}              
+% \address{242 Rue de Tolbiac}{75013 Paris}    
+\email{lucas.gautheron@gmail.com}                      
+\homepage{lucasgautheron.github.io}
+\mobile{+33 6 79 23 86 47} 
+\extrainfo{1995/01/29}
+% \photo[70pt][0.5pt]{photo.png}
+
+\usepackage{lastpage}
+
+\rfoot{\vspace{-2em}\textcolor{gray}{\textit{\small{\thepage/\pageref{LastPage}}}}}
+
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}    
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+
+\addbibresource{publications.bib}
+% \addbibresource{talks.bib}
+
+\AtEveryBibitem{\clearfield{tags}}
+\AtEveryBibitem{\clearfield{issn}}
+\AtEveryBibitem{\clearfield{pages}}
+
+\boldname{Gautheron}{Lucas}{L.}
+
+\usepackage{textcomp}
+
+\DeclareBibliographyCategory{exclude}
+\addtocategory{exclude}{sfhst2023,ss2023}
+
+
+\begin{document}
+\definecolor{DarkGreen}{RGB}{1,125,32}
+\hypersetup{
+colorlinks=true,
+linkcolor=DarkGreen,
+urlcolor=DarkGreen,
+,citecolor=Green
+,citebordercolor=Green
+,urlbordercolor=Green
+}
+
+\definecolor{moderncvgreen}{rgb}{0.35,0.70,0.30}
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[0.75em]{}{%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+    }%
+}
+
+\newcommand{\cvreference}[8]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7\newline}%
+    \ifthenelse{\equal{#8}{}}{}{\homepagesymbol~#8}}
+
+
+\maketitle
+
+% \vspace{-1.75em}
+~\\
+\textbf{\textcolor{moderncvgreen}{Areas of Specialization:} \ Computational social science, Collective cognition} \\
+\textbf{\textcolor{moderncvgreen}{Areas of Competence:} \ Bayesian inference, Complex systems, Philosophy of Science}
+
+\vspace{1em}
+
+\section{Education}
+\cventry{2022--2025}{Ph.D. in Computational Sociology}{Interdisciplinary Centre for Science and Technology Studies, University of Wuppertal}{Germany}{\textit{Summa cum laude}}{``Social dilemmas in science: a computational approach to collective action problems and tradeoffs in collective cognition''.\\Jury committee: Thomas Heinze, Radin Dardashti, Mark Lutter, Hugo Mercier, Camille Roth, Dunja Šešelja}
+\cventry{2021--2022}{M.A., History and Philosophy of Science}{Université Paris-Cité}{France}{[Rank:~1\textsuperscript{st}]}{} 
+\cventry{2014--2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure Paris-Saclay}{France}{}{}
+% \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (top research oriented higher education institutions).}
+% \cventry{2014-2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure Paris-Saclay}{}{}{Full scholarship \& civil-servant status.}
+% \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (top research oriented higher education institutions).}
+
+
+\section{Research and teaching appointments}
+
+\cventry{\textbf{2025--2027}}{Postdoctoral Researcher}{Department of Philosophy, University of Missouri}{Evolution, Science and Society}{}{}
+\cventry{Spring 2025}{Teaching Assistant in Computational Social Science}{\href{https://ssc-ehess.github.io/}{Seminar for masters' students and researchers}}{}{École des hautes études en sciences sociales, Paris}{}
+\cventry{2023--2024\\2020--2021}{Research Assistant in computational linguistics}{Department of Cognitive Studies, École Normale Supérieure}{}{Paris}{}
+
+\section{External collaborations}
+
+\cventry{2025--2027}{``Designing Smart Environments to Augment Collective Learning \& Creativity''}{Member}{}{}{
+NSF project for studying the impact of self-governance on collective intelligence and creativity using large-scale experiments.\\
+The project is co-led by Dalton Conley (Princeton) Seth Frey (UC Davis), Nori Jacoby (Cornell), and Ofer Tchernichovski (CUNY).}{
+}
+
+\section{Research visits}
+
+\cventry{Spring 2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
+\cventry{June 2022}{Invited visitor}{Max Planck Institute for Evolutionary Anthropology}{Leipzig, Germany}{}{}
+
+\section{Non-academic appointments}
+
+%\cventry{Novembre 2020 à Aujourd'hui}{Pigiste}{Le Média}{}{Montreuil}{Recensions d'ouvrages.}
+
+\cventry{2019--2020}{President \& Publication Director}{Société de Production Le Média}{}{Montreuil, France}{Head of a production company with 12+ full-time workers and 1M\texteuro \ annual budget
+%Marketing procedures optimization, development of revenue forecasting models and audience data analysis.
+}
+
+\cventry{2018--2020}{Data Journalist}{Le Média}{}{Montreuil, France}{}
+
+\nocite{*} % <==========================================================
+
+
+\end{document}
