@@ -6,7 +6,7 @@
 \moderncvtheme[green]{classic}
 \AtBeginDocument{\recomputelengths}
 \usepackage[utf8]{inputenc}
-\usepackage[top=0.72in, bottom=0.72in, left=1.7cm, right=0.75in]{geometry}
+\usepackage[top=0.7in, bottom=0.7in, left=0.7in, right=0.75in]{geometry}
 \setlength{\hintscolumnwidth}{2cm}
 
 \RequirePackage{filecontents}
@@ -40,7 +40,7 @@
 
 \firstname{Lucas}
 \familyname{Gautheron}
-\title{Computational Models of Human \& Social Behavior}              
+\title{Computational models of human \& social behavior}              
 % \address{242 Rue de Tolbiac}{75013 Paris}    
 \email{lucas.gautheron@gmail.com}                      
 \homepage{lucasgautheron.github.io}
@@ -130,17 +130,17 @@ urlcolor=DarkGreen,
 
 \maketitle
 
-% \vspace{-1.75em}
+\vspace{-4em}
 ~\\
-\textbf{\textcolor{moderncvgreen}{Areas of Specialization:} \ Computational social science, Collective cognition} \\
-\textbf{\textcolor{moderncvgreen}{Areas of Competence:} \ Bayesian inference, Complex systems, Philosophy of Science}
+\textbf{\textcolor{moderncvgreen}{Areas of specialization:} \ Computational social science, collective cognition} \\
+\textbf{\textcolor{moderncvgreen}{Areas of competence:} \ Bayesian inference, complex systems, philosophy of science}
 
-\vspace{1em}
+\vspace{0em}
 
 \section{Education}
-\cventry{2022--2025}{Ph.D. in Computational Sociology}{Interdisciplinary Centre for Science and Technology Studies, University of Wuppertal}{Germany}{\textit{Summa cum laude}}{``Social dilemmas in science: a computational approach to collective action problems and tradeoffs in collective cognition''.\\Jury committee: Thomas Heinze, Radin Dardashti, Mark Lutter, Hugo Mercier, Camille Roth, Dunja Šešelja}
-\cventry{2021--2022}{M.A., History and Philosophy of Science}{Université Paris-Cité}{France}{[Rank:~1\textsuperscript{st}]}{} 
-\cventry{2014--2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure Paris-Saclay}{France}{}{}
+\cventry{2022--2025}{Ph.D. in computational sociology}{Interdisciplinary Centre for Science and Technology Studies, University of Wuppertal}{Germany}{\textit{Summa cum laude}}{``Social dilemmas in science: a computational approach to collective action problems and tradeoffs in collective cognition''.\\Jury: Thomas Heinze, Radin Dardashti, Mark Lutter, Hugo Mercier, Camille Roth, Dunja Šešelja}
+\cventry{2021--2022}{M.A., history and philosophy of science}{Université Paris-Cité}{France}{}{} 
+\cventry{2014--2018}{Master 1, theoretical and experimental physics}{Ecole Normale Supérieure Paris-Saclay}{France}{}{}
 % \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (top research oriented higher education institutions).}
 % \cventry{2014-2018}{Master 1, Theoretical and Experimental Physics}{Ecole Normale Supérieure Paris-Saclay}{}{}{Full scholarship \& civil-servant status.}
 % \cventry{2012-2014}{PCSI/PC*}{Lycée Berthollet}{Annecy}{}{Mathematics, physics and chemistry. Preparation for the competitive entrance exams of the Écoles Normales Supérieures (top research oriented higher education institutions).}
@@ -148,33 +148,44 @@ urlcolor=DarkGreen,
 
 \section{Research and teaching appointments}
 
-\cventry{\textbf{2025--2027}}{Postdoctoral Researcher}{Department of Philosophy, University of Missouri}{Evolution, Science and Society}{}{}
-\cventry{Spring 2025}{Teaching Assistant in Computational Social Science}{\href{https://ssc-ehess.github.io/}{Seminar for masters' students and researchers}}{}{École des hautes études en sciences sociales, Paris}{}
-\cventry{2023--2024\\2020--2021}{Research Assistant in computational linguistics}{Department of Cognitive Studies, École Normale Supérieure}{}{Paris}{}
+\cventry{\textbf{2025--2027}}{Postdoctoral researcher}{Department of Philosophy, University of Missouri}{Evolution, science and society}{}{}
+\cventry{Spring 2025}{Teaching assistant in computational social science}{\href{https://ssc-ehess.github.io/}{Seminar for masters' students and researchers}}{}{École des hautes études en sciences sociales, Paris}{}
+\cventry{2023--2024\\2020--2021}{Research assistant in computational linguistics}{Department of Cognitive Studies, École Normale Supérieure}{}{Paris}{}
 
-\section{External collaborations}
+\section{Current external collaborations}
 
-\cventry{2025--2027}{``Designing Smart Environments to Augment Collective Learning \& Creativity''}{Member}{}{}{
-NSF project for studying the impact of self-governance on collective intelligence and creativity using large-scale experiments.\\
-The project is co-led by Dalton Conley (Princeton) Seth Frey (UC Davis), Nori Jacoby (Cornell), and Ofer Tchernichovski (CUNY).}{
+\cventry{2025--2027}{``Designing smart environments to augment collective learning \& creativity''}{Member}{}{}{
+NSF project conducting large-scale experiments on self-governance in collective intelligence and creativity. Co-PIs: Dalton Conley (Princeton) Seth Frey (UC Davis), Nori Jacoby (Cornell), and Ofer Tchernichovski (CUNY).}{
 }
 
-\section{Research visits}
+\nocite{ic2s22025,berlin2025,ic2s22024,turin2024,ijn2025,Gautheron2025,Gautheron2023}
 
-\cventry{Spring 2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
-\cventry{June 2022}{Invited visitor}{Max Planck Institute for Evolutionary Anthropology}{Leipzig, Germany}{}{}
+\newrefcontext[labelprefix=P]
+\printbibliography[title={Relevant publications},keyword=publications]
 
-\section{Non-academic appointments}
-
-%\cventry{Novembre 2020 à Aujourd'hui}{Pigiste}{Le Média}{}{Montreuil}{Recensions d'ouvrages.}
-
-\cventry{2019--2020}{President \& Publication Director}{Société de Production Le Média}{}{Montreuil, France}{Head of a production company with 12+ full-time workers and 1M\texteuro \ annual budget
-%Marketing procedures optimization, development of revenue forecasting models and audience data analysis.
+\newrefcontext[labelprefix=T]
+\defbibfilter{talks}{%
+    keyword=invitedtalks or keyword=contributedtalks
 }
+\printbibliography[title={Relevant talks},filter=talks,resetnumbers=true]
 
-\cventry{2018--2020}{Data Journalist}{Le Média}{}{Montreuil, France}{}
 
-\nocite{*} % <==========================================================
+% \section{Research visits}
+
+% \cventry{Spring 2023}{Visiting PhD student}{Medialab, Sciences Po Paris}{}{}{}
+% \cventry{June 2022}{Invited visitor}{Max Planck Institute for Evolutionary Anthropology}{Leipzig, Germany}{}{}
+
+% \section{Non-academic appointments}
+
+% %\cventry{Novembre 2020 à Aujourd'hui}{Pigiste}{Le Média}{}{Montreuil}{Recensions d'ouvrages.}
+
+% \cventry{2019--2020}{President \& Publication Director}{Société de Production Le Média}{}{Montreuil, France}{Head of a production company with 12+ full-time workers and 1M\texteuro \ annual budget
+% %Marketing procedures optimization, development of revenue forecasting models and audience data analysis.
+% }
+
+% \cventry{2018--2020}{Data Journalist}{Le Média}{}{Montreuil, France}{}
+
+% \nocite{*} % <==========================================================
 
 
 \end{document}
