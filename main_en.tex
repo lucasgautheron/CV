@@ -12,6 +12,86 @@
 \RequirePackage{filecontents}
 \usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom,defernumbers=true]{biblatex}
 
+% Toggle publication preview figures (Dodds-style left gutter)
+\newif\ifincludepreviews
+\includepreviewstrue
+\newif\ifpreviewbibstyle
+
+\graphicspath{{previews/}}
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=preview, match=\regexp{\.gif\Z}, replace={.png}]
+      \step[fieldsource=preview, fieldtarget=usera]
+    }
+  }
+}
+\newcommand{\previewwidth}{3.55cm}
+\newcommand{\previewheight}{2.35cm}
+\newcommand{\previewsep}{0.7em}
+\newcommand{\printbibhintlabel}{%
+  \hintstyle{%
+    \printtext[labelnumberwidth]{%
+      \printfield{labelprefix}%
+      \printfield{labelnumber}}}}
+\newlength{\previewtextwidth}
+\defbibenvironment{previewbib}
+  {\previewbibstyletrue
+   \list{}{%
+     \setlength{\topsep}{0.25em}%
+     \setlength{\partopsep}{0pt}%
+     \setlength{\parsep}{0pt}%
+     \setlength{\itemsep}{1.05em}%
+     \setlength{\leftmargin}{0pt}%
+     \setlength{\labelwidth}{0pt}%
+     \setlength{\labelsep}{0pt}%
+     \setlength{\itemindent}{0pt}}%
+   \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+\renewbibmacro*{begentry}{%
+  \ifpreviewbibstyle
+    \iffieldundef{usera}
+      {\setlength{\previewtextwidth}{\linewidth}}
+      {%
+        \setlength{\previewtextwidth}{\dimexpr\linewidth-\previewwidth-\previewsep\relax}%
+        \begin{minipage}[t]{\previewwidth}
+          \vspace{0pt}%
+          \centering
+          \includegraphics[width=\previewwidth,height=\previewheight,keepaspectratio]{\thefield{usera}}%
+        \end{minipage}%
+        \hspace{\previewsep}%
+      }%
+    \begin{minipage}[t]{\previewtextwidth}
+      \vspace{0pt}%
+      \raggedright
+      \printbibhintlabel\hspace{0.45em}%
+  \fi
+}
+\newcommand{\printpreviewlink}{%
+  \iffieldundef{url}
+    {\iffieldundef{doi}
+       {}
+       {\par\noindent\href{https://doi.org/\thefield{doi}}{\nolinkurl{https://doi.org/\thefield{doi}}}}}%
+    {\par\noindent\url{\thefield{url}}}%
+}
+\renewbibmacro*{finentry}{%
+  \ifpreviewbibstyle
+    \finentry
+    \printpreviewlink
+    \end{minipage}%
+  \else
+    \finentry
+  \fi
+}
+\newcommand{\printpaperbib}[1]{%
+  \ifincludepreviews
+    \printbibliography[#1,env=previewbib]%
+  \else
+    \printbibliography[#1]%
+  \fi
+}
+
 % Make titles clickable rather than showing urls
 \ExecuteBibliographyOptions{url=false}
 \newbibmacro{string+url}[1]{%
@@ -201,8 +281,8 @@ Particle physics for the ATLAS experiment.
     keyword=contributedtalks or keyword=conferenceproceedings
 }
 \newrefcontext[labelprefix=A]
-\printbibliography[title={Preprints},keyword=preprints, resetnumbers=false,notcategory=exclude]
-\printbibliography[title={Peer-Reviewed Publications},keyword=publications, resetnumbers=false,notcategory=exclude]
+\printpaperbib{title={Preprints},keyword=preprints, resetnumbers=true,notcategory=exclude}
+\printpaperbib{title={Peer-Reviewed Publications},keyword=publications, resetnumbers=false,notcategory=exclude}
 
 
 \newrefcontext[labelprefix=A]
