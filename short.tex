@@ -11,6 +11,7 @@
 
 \RequirePackage{filecontents}
 \usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom,defernumbers=true]{biblatex}
+\input{exhaustive}
 
 % Make titles clickable rather than showing urls
 \ExecuteBibliographyOptions{url=false}
@@ -93,7 +94,7 @@
 \usepackage{textcomp}
 
 \DeclareBibliographyCategory{exclude}
-\addtocategory{exclude}{gautheron:hal-03047153,wuppertal2022,darcle2024}
+\addtocategory{exclude}{gautheron2020lift,wuppertal2022,darcle2024}
 
 
 \begin{document}
@@ -195,16 +196,19 @@ Particle physics for the ATLAS experiment.
 
 \nocite{*} % <==========================================================
 
+\defbibfilter{refereed}{%
+    keyword=publications or keyword=conferenceproceedings
+}
 \defbibfilter{contributed}{%
-    keyword=contributedtalks or keyword=conferenceproceedings
+    keyword=contributedtalks
 }
 \newrefcontext[labelprefix=A]
 \printbibliography[title={Preprints},keyword=preprints, resetnumbers=false,notcategory=exclude]
-\printbibliography[title={Peer-Reviewed Publications},keyword=publications, resetnumbers=false,notcategory=exclude]
+\printbibliography[title={Refereed publications},filter=refereed, resetnumbers=false,notcategory=exclude]
 \newrefcontext[labelprefix=T]
-\printbibliography[title={Invited Talks},keyword=invitedtalks,resetnumbers=true,notcategory=exclude]
+\printbibliography[title={Invited talks},keyword=invitedtalks,resetnumbers=true,notcategory=exclude]
 
-\printbibliography[title={Selected Contributed Talks},filter=contributed, resetnumbers=false,notcategory=exclude]
+\printbibliography[title={Selected contributed talks},filter=contributed, resetnumbers=false,notcategory=exclude]
 \newrefcontext[labelprefix=P]
 \printbibliography[title={Poster presentations},keyword=posters, resetnumbers=true,notcategory=exclude]
 
@@ -222,7 +226,7 @@ Particle physics for the ATLAS experiment.
 
 \cventry{2024}{Workshop ``\href{https://grk2696.de/physics-workshop/}{Methodological Transformations in Fundamental Physics}'' (September 16\textsuperscript{th}-18\textsuperscript{th})}{Co-organizer}{}{Wuppertal, Germany}{}
 
-\section{Graduate Workshops and Summer Schools attended}
+\section{Graduate workshops and summer schools attended}
 
 \cventry{2024}{Santa Fe Institute Graduate Workshop in Computational Social Science Modeling and Complexity}{}{}{Santa Fe, NM, United States ($\sim$20\% acceptance rate)}{}
 % \cventry{2023}{Summer school ``Collaboration and Interdisciplinarity in Science and Technology''}{}{Interdisciplinary Summer School Series in Higher Education Research and Science Studies}{Wuppertal, Germany}{}

@@ -1,0 +1,24 @@
+% Exhaustive bibliography mode.
+% Entries whose keywords include "exhaustive" are omitted unless this mode is on.
+% Enable it before this file is read:
+%   \def\EXHAUSTIVE{}
+% or on the command line:
+%   lualatex '\def\EXHAUSTIVE{}\input{main_en.tex}'
+\newif\ifexhaustive
+\ifdefined\EXHAUSTIVE
+  \exhaustivetrue
+\fi
+
+\makeatletter
+\def\blx@cv@exhaustive@check{%
+  \ifexhaustive
+  \else
+    \ifkeyword{exhaustive}{\toggletrue{blx@skipentry}}{}%
+  \fi
+}
+\patchcmd{\blx@bibitem}
+  {\blx@bibcheck}
+  {\blx@bibcheck\blx@cv@exhaustive@check}
+  {}
+  {\errmessage{exhaustive.tex: failed to install bibliography filter}}
+\makeatother

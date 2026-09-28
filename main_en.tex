@@ -11,6 +11,7 @@
 
 \RequirePackage{filecontents}
 \usepackage[backend=biber,maxbibnames=99,giveninits=true,doi=false,sorting=custom,defernumbers=true]{biblatex}
+\input{exhaustive}
 
 % Toggle publication preview figures (Dodds-style left gutter)
 \newif\ifincludepreviews
@@ -277,20 +278,19 @@ Particle physics for the ATLAS experiment.
 
 \nocite{*} % <==========================================================
 
+\defbibfilter{refereed}{%
+    keyword=publications or keyword=conferenceproceedings
+}
 \defbibfilter{contributed}{%
-    keyword=contributedtalks or keyword=conferenceproceedings
+    keyword=contributedtalks
 }
 \newrefcontext[labelprefix=A]
 \printpaperbib{title={Preprints},keyword=preprints, resetnumbers=true,notcategory=exclude}
-\printpaperbib{title={Peer-Reviewed Publications},keyword=publications, resetnumbers=false,notcategory=exclude}
-
-
-\newrefcontext[labelprefix=A]
-\printbibliography[title={Conference proceedings}, keyword=conferenceproceedings, resetnumbers=false,notcategory=exclude]
+\printpaperbib{title={Refereed publications},filter=refereed, resetnumbers=false,notcategory=exclude}
 
 \newrefcontext[labelprefix=T]
-\printbibliography[title={Invited Talks},keyword=invitedtalks,resetnumbers=true,notcategory=exclude]
-\printbibliography[title={Selected Contributed Talks},filter=contributed, resetnumbers=false,notcategory=exclude]
+\printbibliography[title={Invited talks},keyword=invitedtalks,resetnumbers=true,notcategory=exclude]
+\printbibliography[title={Selected contributed talks},filter=contributed, resetnumbers=false,notcategory=exclude]
 \newrefcontext[labelprefix=P]
 \printbibliography[title={Poster presentations},keyword=posters, resetnumbers=true,notcategory=exclude]
 
@@ -320,7 +320,7 @@ Particle physics for the ATLAS experiment.
 NSF project for studying the impact of self-governance on collective intelligence and creativity using large-scale experiments. PIs: Dalton Conley (Princeton) Seth Frey (UC Davis), Nori Jacoby (Cornell), and Ofer Tchernichovski (CUNY).}{
 }
 
-\section{Graduate Workshops and Summer Schools attended}
+\section{Graduate workshops and summer schools attended}
 
 \cventry{2025}{Santa Fe Institute Advanced Graduate Workshop in Computational Social Science Modeling and Complexity}{}{}{Santa Fe, NM, United States.}{}
 \cventry{2024}{Santa Fe Institute Graduate Workshop in Computational Social Science Modeling and Complexity  {\small (20\% acceptance rate)}}{}{}{Santa Fe, NM, United States}{}
